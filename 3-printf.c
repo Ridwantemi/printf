@@ -54,7 +54,7 @@ int print_string(va_list ap, params_t *params)
 	unsigned int pad = 0, sum = 0, i = 0, j;
 
 	(void)params;
-	switch ((int)(!str))		
+	switch ((int)(!str))
 		case 1:
 			str = NULL_STRING;
 
@@ -62,7 +62,7 @@ int print_string(va_list ap, params_t *params)
 	if (params->precision < pad)
 		j = pad = params->precision;
 
-	if (params->minus_flag):
+	if (params->minus_flag)
 	{
 		if (params->precision != UINT_MAX)
 			for (i = 0; i < pad; i++)
@@ -90,17 +90,13 @@ int print_string(va_list ap, params_t *params)
  *
  * Return: number chars printed
  */
-<<<<<<< HEAD
-printed int print_percent(va_list ap, params_t, *params)
-=======
 int print_percent(va_list ap, params_t *params)
->>>>>>> ffdb12634866fc0d09d88aa26679493703c6cae2
 {
 	(void)ap;
+	(void)params;
+	return (_putchar('%'));
+}
 
-<<<<<<< HEAD
-		(void)params;
-=======
 /**
  * print_S - custom format specifier
  * @ap: argument pointer
@@ -113,7 +109,24 @@ int print_S(va_list ap, params_t *params)
 	char *str = va_arg(ap, char *);
 	char *hex;
 	int sum = 0;
->>>>>>> ffdb12634866fc0d09d88aa26679493703c6cae2
 
-			return (_putchar('%'));
-}		
+	if ((int)(!str))
+		return (_puts(NULL_STRING));
+	for (; *str; str++)
+	{
+		if ((*str > 0 && *str < 32) || *str >= 127)
+		{
+			sum += _putchar('\\');
+			sum += _putchar('x');
+			hex = convert(*str, 16, 0, params);
+			if (!hex[1])
+				sum += _putchar('0');
+			sum += _puts(hex);
+		}
+		else
+		{
+			sum += _putchar(*str);
+		}
+	}
+	return (sum);
+}
