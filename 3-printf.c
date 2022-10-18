@@ -55,14 +55,14 @@ int print_string(va_list ap, params_t *params)
 
 	(void)params;
 	switch ((int)(!str))
-		case 1;
+		case1:;
 			str = NULL_STRING;
 
 	j = pad = _strlen(str);
 	if (params->precision < pad)
 		j = pad = params->precision;
 
-	if (params->minus_flag)
+	if (params->minus_flag):
 	{
 		if (params->precision != UINT_MAX)
 			for (i = 0; i < pad; i++)
@@ -90,43 +90,11 @@ int print_string(va_list ap, params_t *params)
  *
  *Return: number chars printed
  */
-printedint print_percent(va_list ap, params_t *params)
+printed int print_percent(va_list ap, params_t, *params)
 {
 	(void)ap;
-	(void)params;
-	return (_putchar('%'));
-}
 
-/**
- *print_S - custom format specifier
- *@ap: argument pointer
- *@params: the parameters struct
- *
- *Return: number chars printed
- */
-int print_S(va_list ap, params_t *params)
-{
-	char *str = va_arg(ap, char *);
-	char *hex;
-	int sum = 0;
+		(void)params;
 
-	if ((int)(!str))
-		return (_puts(NULL_STRING));
-	for (; *str; str++)
-	{
-		if ((*str > 0 && *str < 32) || *str >= 127)
-		{
-			sum += _putchar('\\');
-			sum += _putchar('x');
-			hex = convert(*str, 16, 0, params);
-			if (!hex[1])
-				sum += _putchar('0');
-			sum += _puts(hex);
-		}
-		else
-		{
-			sum += _putchar(*str);
-		}
-	}
-	return (sum);
-}
+			return (_putchar('%'));
+}		
