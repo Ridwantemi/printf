@@ -1,0 +1,33 @@
+NAME                                                                                                                                  
+
+       _printf - format and print data                                                                                                 
+
+                                                                                                                                      
+SYNOPSIS                                                                                                                              
+
+       _printf FORMAT [ARGUMENT]...                                                                                                                                                                                                                    
+                                                                                                                                      
+DESCRIPTION                                                                                                                           
+
+       Print ARGUMENT(s) according to FORMAT to the stdout
+
+Format specifiers (beginning with %), the additional arguments following format specifiers are inserted according to it.
+
+Example
+
+int age = 28;
+{
+_printf("%d",age)
+in the example, the format specifier d will assign the integer value for the variable age
+
+The format specifiers
+
+%c - prints character
+%s - prints string
+%d - prints decimal
+%i - prints integer 
+
+
+AUTHORS
+Obayopo Ridwan (Ridwantemi)
+Osazee Ikponmwen (Osazee112) 
