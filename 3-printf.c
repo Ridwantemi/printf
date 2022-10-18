@@ -1,11 +1,11 @@
 #include "main.h"
 
 /**
- *print_char - prints character
- *@ap: argument pointer
- *@params: the parameters struct
+ * print_char - prints character
+ * @ap: argument pointer
+ * @params: the parameters struct
  *
- *Return: number chars printed
+ * Return: number chars printed
  */
 int print_char(va_list ap, params_t *params)
 {
@@ -22,11 +22,11 @@ int print_char(va_list ap, params_t *params)
 }
 
 /**
- *print_int - prints integer
- *@ap: argument pointer
- *@params: the parameters struct
+ * print_int - prints integer
+ * @ap: argument pointer
+ * @params: the parameters struct
  *
- *Return: number chars printed
+ * Return: number chars printed
  */
 int print_int(va_list ap, params_t *params)
 {
@@ -42,11 +42,11 @@ int print_int(va_list ap, params_t *params)
 }
 
 /**
- *print_string - prints string
- *@ap: argument pointer
- *@params: the parameters struct
+ * print_string - prints string
+ * @ap: argument pointer
+ * @params: the parameters struct
  *
- *Return: number chars printed
+ * Return: number chars printed
  */
 int print_string(va_list ap, params_t *params)
 {
@@ -54,8 +54,8 @@ int print_string(va_list ap, params_t *params)
 	unsigned int pad = 0, sum = 0, i = 0, j;
 
 	(void)params;
-	switch ((int)(!str))
-		case1:;
+	switch ((int)(!str))		
+		case 1:
 			str = NULL_STRING;
 
 	j = pad = _strlen(str);
@@ -84,17 +84,36 @@ int print_string(va_list ap, params_t *params)
 }
 
 /**
- *print_percent - prints string
- *@ap: argument pointer
- *@params: the parameters struct
+ * print_percent - prints string
+ * @ap: argument pointer
+ * @params: the parameters struct
  *
- *Return: number chars printed
+ * Return: number chars printed
  */
+<<<<<<< HEAD
 printed int print_percent(va_list ap, params_t, *params)
+=======
+int print_percent(va_list ap, params_t *params)
+>>>>>>> ffdb12634866fc0d09d88aa26679493703c6cae2
 {
 	(void)ap;
 
+<<<<<<< HEAD
 		(void)params;
+=======
+/**
+ * print_S - custom format specifier
+ * @ap: argument pointer
+ * @params: the parameters struct
+ *
+ * Return: number chars printed
+ */
+int print_S(va_list ap, params_t *params)
+{
+	char *str = va_arg(ap, char *);
+	char *hex;
+	int sum = 0;
+>>>>>>> ffdb12634866fc0d09d88aa26679493703c6cae2
 
 			return (_putchar('%'));
 }		
